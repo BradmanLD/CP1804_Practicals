@@ -5,10 +5,10 @@ Bradman Davis
 
 def main():
     name = get_name()
-    print_second_letter(name)
+    print_name(name)
 
 
-def print_second_letter(name):
+def print_name(name):
     for char in name[::2]:
         print(char)
 
