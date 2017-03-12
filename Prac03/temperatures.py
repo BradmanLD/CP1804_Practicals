@@ -33,5 +33,4 @@ def convert_celsius_to_fahrenheit(celsius_temp):
     fahrenheit = celsius_temp * 9.0 / 5 + 32
     return fahrenheit
 
-
-
+main()
