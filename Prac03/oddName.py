@@ -16,3 +16,5 @@ def print_name(name):
 def get_name():
     name = str(input("Enter your name: "))
     return name
+
+main()
