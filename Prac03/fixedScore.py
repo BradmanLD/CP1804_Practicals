@@ -2,13 +2,14 @@ def main():
     score = float(input("Enter score (must be between 1 and 100): "))
     while score < 0 or score > 100:
         score = float(input("Invalid Input, Enter score (must be between 1 and 100): "))
-    print(get_score_range(score))
+    grade = determine_grade(score)
+    print(grade)
 
 
-def get_score_range(grade):
-    if grade >= 90:
+def determine_grade(score):
+    if score >= 90:
         return "Excellent"
-    elif grade >= 50:
+    elif score >= 50:
         return "Passable"
     else:
         return "Bad"

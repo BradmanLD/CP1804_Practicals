@@ -4,15 +4,19 @@ Bradman Davis
 
 
 def main():
+    step = int(input("Enter the step: "))
     name = get_name()
-    print_name(name)
+    print_sliced_name(name, step)
 
 
-def print_name(name):
-    for char in name[::2]:
-        print(char)
+def print_sliced_name(name, step):
+    print(name[::step])
 
 
 def get_name():
-    name = str(input("Enter your name: "))
+    name = input("Enter your name: ")
+    while name.strip() == "":
+        name = str(input("Invalid Input, Enter your name: "))
     return name
+
+main()
