@@ -12,7 +12,7 @@ import random
 def main():
     random_num_list = []
     number_of_quick_picks = int(input("How many quick picks? "))
-    for i in range(0, number_of_quick_picks):
+    for quick_pick in range(0, number_of_quick_picks):
         for i in range(0, 6):
             random_number = random.randint(1, 45)
             while random_number in random_num_list:
@@ -20,7 +20,7 @@ def main():
             random_num_list.append(random_number)
             if i == 5:
                 random_num_list.sort()
-                print("{:2d} {:2d} {:2d} {:2d} {:2d} {:2d}".format(random_num_list[0], random_num_list[1],
+                print('{:2d} {:2d} {:2d} {:2d} {:2d} {:2d}'.format(random_num_list[0], random_num_list[1],
                                                                    random_num_list[2],
                                                                    random_num_list[3], random_num_list[4],
                                                                    random_num_list[5]))

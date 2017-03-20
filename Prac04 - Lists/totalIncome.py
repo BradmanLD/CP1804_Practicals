@@ -12,10 +12,10 @@ def main():
         income = float(input("Enter income for month " + str(month) + ": "))
         incomes.append(income)
 
-    display_income_report(incomes, number_of_months)
+    print_income_report(incomes, number_of_months)
 
 
-def display_income_report(incomes, number_of_months):
+def print_income_report(incomes, number_of_months):
     print("\nIncome Report\n-------------")
     total = 0
     for month in range(1, number_of_months + 1):
