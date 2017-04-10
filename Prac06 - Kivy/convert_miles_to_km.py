@@ -13,6 +13,7 @@ class ConvertMilesToKilometresApp(App):
     def handle_increment(self, increment):
         incremented_number = self.get_miles() + increment
         self.root.ids.number_of_miles.text = str(incremented_number)
+        self.calculate_miles_to_kilometres()
 
     def get_miles(self):
         try:

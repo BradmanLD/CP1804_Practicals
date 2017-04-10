@@ -6,6 +6,7 @@ BoxLayout:
             id: number_of_miles
             size_hint: 1, 1
             text: ''
+            on_text: app.calculate_miles_to_kilometres()
 
         BoxLayout:
             orientation: 'vertical'
@@ -16,11 +17,12 @@ BoxLayout:
             Button:
                 text: 'Down'
                 on_press: app.handle_increment(-1)
-    Button:
-        text: 'Convert miles to kilometres'
-        on_press: app.calculate_miles_to_kilometres()
+
+#    Button:   Not needed in Stage 2
+#        text: 'Convert miles to kilometres'
+#        on_press: app.calculate_miles_to_kilometres()
 
     Label:
         id: output_label
-        text: 'Enter a number of miles and click Convert miles to kilometres'
+        text: 'Enter a number of miles to convert it to kilometres'
         color: (0, 1, 1, 1)
