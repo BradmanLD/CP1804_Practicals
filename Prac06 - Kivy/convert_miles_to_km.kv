@@ -1,10 +1,19 @@
+<TextInput>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 0.5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    text.color: 1, 1, 1, 1
+
+
 BoxLayout:
     orientation: 'vertical'
     BoxLayout:
         orientation: 'horizontal'
         TextInput:
             id: number_of_miles
-            size_hint: 1, 1
             text: ''
             on_text: app.calculate_miles_to_kilometres()
 
@@ -25,4 +34,4 @@ BoxLayout:
     Label:
         id: output_label
         text: 'Enter a number of miles to convert it to kilometres'
-        color: (0, 1, 1, 1)
+        color: (1, 1, 1, 1)
