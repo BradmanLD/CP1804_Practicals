@@ -1,7 +1,7 @@
 
 
 class ProgrammingLanguage:
-    def __init__(self, name, typing_type, can_reflect, year):
+    def __init__(self, name="", typing_type="Static", can_reflect="True", year=0):
         self.name = name
         self.typing_type = typing_type
         self.can_reflect = can_reflect
