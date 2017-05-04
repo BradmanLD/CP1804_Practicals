@@ -17,3 +17,9 @@ print(prius_one)
 silver_surfer = SilverServiceTaxi("Silver Surfer", 100, 4.85)
 print(silver_surfer.price_per_km)
 print(silver_surfer)
+
+# Test with expected outputs
+hummer = SilverServiceTaxi("Hummer", 200, 2)
+hummer.drive(10)
+print(hummer.get_fare())  # Expected $28.50 - Got $28.50
+
