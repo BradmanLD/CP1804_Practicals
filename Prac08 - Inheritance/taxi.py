@@ -60,3 +60,20 @@ class Taxi(Car):
         distance_driven = super().drive(distance)
         self.current_fare_distance += distance_driven
         return distance_driven
+
+
+class SilverServiceTaxi(Taxi):
+    flagfall =  4.5
+
+    def __init__(self, name, fuel, fanciness=0.0):
+        super().__init__(name, fuel)
+        self.price_per_km *= fanciness
+
+    def __str__(self):
+        """ return a string representation like a Taxi but with flagfall"""
+        return "{} plus flagfall of {}".format(super().__str__(), self.flagfall)
+
+    def get_fare(self):
+        """ get the price for a normal taxi trip + flagfall """
+        # Would it even make sense to do super().get_fare() cause that seems less readable
+        return self.price_per_km * self.current_fare_distance + self.flagfall
