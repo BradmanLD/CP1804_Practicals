@@ -1,7 +1,7 @@
 from taxi import Taxi
 
 # Test creating a new taxi
-prius_one = Taxi("Prius 1", 100, 1.2)
+prius_one = Taxi("Prius 1", 100)
 
 # Test driving & __str__
 prius_one.drive(40)
