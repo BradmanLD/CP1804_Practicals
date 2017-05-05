@@ -21,6 +21,9 @@ def main():
             print("Your {} trip cost you ${:.2f}".format(chosen_taxi.name, chosen_taxi.get_fare()))
             current_bill += chosen_taxi.get_fare()
 
+        else:
+            print("Invalid Menu Choice")
+
         print("Bill to date: ${:.2f}".format(current_bill))
         print(MENU)
         menu_choice = input(">>> ").lower()
