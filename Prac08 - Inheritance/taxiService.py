@@ -16,7 +16,7 @@ def main():
             chosen_taxi = get_taxi_choice(taxis)
             chosen_taxi.start_fare()
 
-        if menu_choice == 'd':
+        elif menu_choice == 'd':
             drive_taxi(chosen_taxi)
             print("Your {} trip cost you ${:.2f}".format(chosen_taxi.name, chosen_taxi.get_fare()))
             current_bill += chosen_taxi.get_fare()
