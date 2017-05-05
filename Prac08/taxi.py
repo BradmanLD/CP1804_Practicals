@@ -63,7 +63,7 @@ class Taxi(Car):
 
 
 class SilverServiceTaxi(Taxi):
-    flagfall =  4.5
+    flagfall = 4.5
 
     def __init__(self, name, fuel, fanciness=0.0):
         """ initialize a Silver Service Taxi instance based on parent class Taxi """

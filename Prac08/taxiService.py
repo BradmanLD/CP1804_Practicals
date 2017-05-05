@@ -1,4 +1,4 @@
-from prac08.taxi import Taxi, SilverServiceTaxi
+from Prac08.taxi import Taxi, SilverServiceTaxi
 
 MENU = "q)uit, c)hoose taxi, d)rive"
 
