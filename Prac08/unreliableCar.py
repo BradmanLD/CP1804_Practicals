@@ -1,4 +1,4 @@
-from car import Car
+from prac08.car import Car
 from random import randint
 
 
