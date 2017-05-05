@@ -42,9 +42,26 @@ def main():
     # close the file as soon as we've finished reading it
     in_file.close()
 
+    # add new programming language
+    languages.append(ProgrammingLanguage("Eiffel", "Static", True, 1985))
+
+    # open the file for writing
+    out_file = open('languages.csv', 'w')
+
+    # Write the header line before the languages
+    out_file.write('Language,Typing,Reflection,Year\n')
+
+    # Loop through the languages and write the formatted information
+    for language in languages:
+        out_file.write("{},{},{},{}\n".format(language.name, language.typing, "Yes" if language.reflection else "No",
+                                              str(language.year)))
+
+    out_file.close()
+
     # loop through and display all languages (using their str method)
     for language in languages:
         print(language)
+
 
 main()
 
@@ -59,6 +76,7 @@ def using_csv():
         print(row)
 
     in_file.close()
+
 
 # using_csv()
 
@@ -76,6 +94,7 @@ def using_namedtuple():
         print(repr(language))
     in_file.close()
 
+
 # using_namedtuple()
 
 
@@ -88,5 +107,3 @@ def using_csv_namedtuple():
         print(repr(language))
 
 # using_csv_namedtuple()
-
-
