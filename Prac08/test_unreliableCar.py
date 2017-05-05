@@ -1,4 +1,4 @@
-from unreliableCar import UnreliableCar
+from prac08.unreliableCar import UnreliableCar
 
 # Test creating unreliable car
 terrible_car = UnreliableCar("Terrible", 100, 0)
