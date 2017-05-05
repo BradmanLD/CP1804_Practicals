@@ -13,22 +13,35 @@ def main():
     menu_choice = input(">>> ").lower()
     while menu_choice != 'q':
         if menu_choice == 'c':
-            get_taxi_choice(taxis)
-            taxi_choice = int(input(">>> "))
-            chosen_taxi = taxis[taxi_choice]
-            print("Bill to date: ${:.2f}".format(current_bill))
-        if menu_choice == 'd':
-            distance = int(input("Drive how far? "))
-            chosen_taxi.drive(distance)
-            print("Your {} trip cost you ${:.2f}".format(chosen_taxi.name, chosen_taxi.get_fare()))
+            chosen_taxi = get_taxi_choice(taxis)
+            chosen_taxi.start_fare()
 
+        if menu_choice == 'd':
+            drive_taxi(chosen_taxi)
+            print("Your {} trip cost you ${:.2f}".format(chosen_taxi.name, chosen_taxi.get_fare()))
+            current_bill += chosen_taxi.get_fare()
+
+        print("Bill to date: ${:.2f}".format(current_bill))
         print(MENU)
         menu_choice = input(">>> ").lower()
 
 
 def get_taxi_choice(taxis):
+    display_taxis(taxis)
+    taxi_choice = int(input(">>> "))
+    chosen_taxi = taxis[taxi_choice]
+    return chosen_taxi
+
+
+def drive_taxi(taxi):
+    distance = int(input("Drive how far? "))
+    taxi.drive(distance)
+
+
+def display_taxis(taxis):
     print("Taxis available: ")
     for i, taxi in enumerate(taxis):
         print("{} - {}".format(i, taxi))
+
 
 main()
