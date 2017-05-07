@@ -6,6 +6,8 @@ import os, shutil
 
 __author__ = 'Lindsay Ward'
 
+
+INVALID_SYMBOLS = [".", "(", ")", " ", ""]
 print("Current directory is", os.getcwd())
 
 # change to desired directory
@@ -19,9 +21,12 @@ os.chdir('Lyrics/Christmas')
 # loop through each file in the (original) directory
 for filename in os.listdir('.'):
     # ignore directories, just process files
+
+    # print(filename) # Testing for letter checking
+
     if not os.path.isdir(filename):
         new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-        print(new_name)
+        # print(new_name)
 
         # Option 1: rename file to new name - in place
         # os.rename(filename, new_name)
@@ -29,6 +34,9 @@ for filename in os.listdir('.'):
         # Option 2: move file to new place, with new name
         # shutil.move(filename, 'temp/' + new_name)
 
+        for letter in filename:
+            if letter == letter.upper() and letter not in INVALID_SYMBOLS:
+                print(letter)
 
 # Processing subdirectories using os.walk()
 # os.chdir('..')
