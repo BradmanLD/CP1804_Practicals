@@ -42,6 +42,7 @@ def main():
 
 
 def get_fixed_filename(filename):
+    # Try going through the filename character by character and adding it to a newname character by character
     print("Original name is: " + filename)  # Used to test letter for loop
     for i, letter in enumerate(filename):
         if letter in string.ascii_uppercase and letter is not filename[0]:
@@ -49,9 +50,7 @@ def get_fixed_filename(filename):
                 filename = filename.replace(filename[i - 1], "_")
 
             elif filename[i - 1].islower():
-                filename = filename[:i] + "_" + filename[i:]   # Can't change it here as it adds a letter
-
+                filename = filename[:i] + "_" + filename[i:]   # Can't change it here as it adds a character
     return filename
-
 
 main()
