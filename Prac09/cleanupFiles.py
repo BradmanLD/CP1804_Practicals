@@ -20,10 +20,9 @@ os.chdir('Lyrics/Christmas')
 
 # loop through each file in the (original) directory
 for filename in os.listdir('.'):
-    # ignore directories, just process files
-
     # print(filename) # Testing for letter checking
 
+    # ignore directories, just process files
     if not os.path.isdir(filename):
         new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
         # print(new_name)
@@ -32,11 +31,11 @@ for filename in os.listdir('.'):
         # os.rename(filename, new_name)
 
         # Option 2: move file to new place, with new name
-        # shutil.move(filename, 'temp/' + new_name)
+        shutil.move(filename, 'temp/' + new_name)
 
-        for letter in filename:
-            if letter == letter.upper() and letter not in INVALID_SYMBOLS:
-                print(letter)
+        # for letter in filename:
+        #     if letter == letter.upper() and letter not in INVALID_SYMBOLS:
+        #         print(letter)
 
 # Processing subdirectories using os.walk()
 # os.chdir('..')
