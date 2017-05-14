@@ -14,7 +14,7 @@ def main():
     # print a list of all files (test)
     # print(os.listdir('.'))
 
-    print(get_fixed_filename("AngelsWeHaveHeard.txt"))
+    print(get_fixed_filename("O little town of behth.txt"))
     # make a new directory
     # os.mkdir('temp')
 
@@ -46,20 +46,28 @@ def get_fixed_filename(filename):
     print("Original name is: " + filename)  # Used to test letter for loop
     new_string = ""
     for i, letter in enumerate(filename):
-        if letter is filename[0]:
+        previous_letter = filename[i - 1]
+        if i == 0:
+            new_string += letter.upper()
+
+        elif previous_letter in "_ ":
             new_string += letter.upper()
 
         elif letter.islower() and filename[i - 1] != " " and filename[i - 1] != "_":
             new_string += letter
 
-        elif letter.isupper() and filename[i - 1].islower() or filename[0] in "_ ":
+        elif letter.isupper() and previous_letter.islower():
             new_string += "_" + letter
+
+        elif letter == " " and previous_letter != " ":
+            new_string += "_"
 
         if letter == ".":
             new_string += letter
 
 
-    print("New string is" + new_string)
+
+    print("New string is: " + new_string)
 
 
         # if letter in string.ascii_uppercase and letter is not filename[0]:
