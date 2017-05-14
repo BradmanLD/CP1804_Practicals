@@ -6,6 +6,7 @@ import os, shutil
 import string
 __author__ = 'Lindsay Ward'
 
+
 def main():
     # print("Current directory is", os.getcwd())
 
@@ -14,17 +15,20 @@ def main():
     # print a list of all files (test)
     # print(os.listdir('.'))
 
-    print(get_fixed_filename("ItIsWell (oh my soul).txt"))
     # make a new directory
     # os.mkdir('temp')
 
     # loop through each file in the (original) directory
-    # for filename in os.listdir('.'):
+    for filename in os.listdir('.'):
 
         # ignore directories, just process files
-        # if not os.path.isdir(filename):
+        if not os.path.isdir(filename):
             # new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
             # print(new_name)
+
+            fixed_filename = get_fixed_filename(filename)
+            # print(fixed_filename)
+            os.rename(filename, fixed_filename)
 
             # Option 1: rename file to new name - in place
             # os.rename(filename, new_name)
@@ -65,17 +69,12 @@ def get_fixed_filename(filename):
         elif letter == " " and previous_letter != " ":
             new_string += "_"
 
+        elif letter.isupper() and previous_letter.isupper():
+            new_string += "_" + letter
+
         else:
             new_string += letter
 
     return new_string
-
-        # if letter in string.ascii_uppercase and letter is not filename[0]:
-        #     if filename[i - 1] == " ":
-        #         filename = filename.replace(filename[i - 1], "_")
-        #
-        #     elif filename[i - 1].islower():
-        #         filename = filename[:i] + "_" + filename[i:]   # Can't change it here as it adds a character
-    return filename
 
 main()
