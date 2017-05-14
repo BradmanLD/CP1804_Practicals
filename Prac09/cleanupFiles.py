@@ -14,7 +14,7 @@ def main():
     # print a list of all files (test)
     # print(os.listdir('.'))
 
-    print(get_fixed_filename("O little town of behth.txt"))
+    print(get_fixed_filename("ItIsWell (oh my soul).txt"))
     # make a new directory
     # os.mkdir('temp')
 
@@ -53,6 +53,9 @@ def get_fixed_filename(filename):
         elif previous_letter in "_ ":
             new_string += letter.upper()
 
+        elif previous_letter == "(":
+            new_string += letter.upper()
+
         elif letter.islower() and filename[i - 1] != " " and filename[i - 1] != "_":
             new_string += letter
 
@@ -62,13 +65,10 @@ def get_fixed_filename(filename):
         elif letter == " " and previous_letter != " ":
             new_string += "_"
 
-        if letter == ".":
+        else:
             new_string += letter
 
-
-
-    print("New string is: " + new_string)
-
+    return new_string
 
         # if letter in string.ascii_uppercase and letter is not filename[0]:
         #     if filename[i - 1] == " ":
