@@ -60,7 +60,7 @@ def get_fixed_filename(filename):
         elif previous_letter == "(":
             new_string += letter.upper()
 
-        elif letter.islower() and filename[i - 1] != " " and filename[i - 1] != "_":
+        elif letter.islower() and previous_letter != " " and previous_letter != "_":
             new_string += letter
 
         elif letter.isupper() and previous_letter.islower():
