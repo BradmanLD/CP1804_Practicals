@@ -47,14 +47,12 @@ def main():
 
 def get_fixed_filename(filename):
     # Try going through the filename character by character and adding it to a newname character by character
-    print("Original name is: " + filename)  # Used to test letter for loop
-    new_string = ""
+    # print("Original name is: " + filename)  # Used to test letter for loop
+    new_string = filename[0].upper()
+    filename = filename[1:]
     for i, letter in enumerate(filename):
         previous_letter = filename[i - 1]
-        if i == 0:
-            new_string += letter.upper()
-
-        elif previous_letter in "_ ":
+        if previous_letter in "_ ":
             new_string += letter.upper()
 
         elif previous_letter == "(":
