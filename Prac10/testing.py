@@ -23,7 +23,7 @@ def is_long_word(word, length=5):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
@@ -40,17 +40,16 @@ def run_tests():
     assert test_car.odometer == 0, "Car does not set odometer correctly"
     assert test_car.fuel == 0
 
-    test_car = Car('', 20)
+    test_car = Car(fuel=20)
     assert test_car.fuel == 20
     # Note that Car's __init__ function sets the fuel in one of two ways: using the value passed in or the default
     # You should test both of these
-    test_car = Car(fuel=10)
 
 
-run_tests()
+# run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function (don't change the tests, but the function!)
 
