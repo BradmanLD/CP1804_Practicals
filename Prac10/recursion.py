@@ -22,12 +22,12 @@ print(do_it(5))
 
 
 def do_something(n):
-    if n < 0:
+    if n > 0:
         print(n ** 2)
-    do_something(n - 1)
+        do_something(n - 1)
 
 # do_something(4) -> do_something(3) -> do_something(2) -> do_something(1) -> do_something(0) -V
-# do_something(-1) -> -1 ** 2 = 1
+# do_something(-1) -> -1 ** 2 = 1, also I think python shows this as 1 instead of -1. To get 1 it would be (-1)**.
 # Wait it doesn't end, it will recurse until it hits the recursion limit.
 # .: The output is like a thousand different numbers.
 do_something(4)
