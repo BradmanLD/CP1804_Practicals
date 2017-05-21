@@ -9,8 +9,15 @@ def do_it(n):
         return 0
     return n % 2 + do_it(n - 1)
 
-# TODO: 1. write down what you think the output of this will be,
-# TODO: 2. use the debugger to step through and see what's actually happening
+#                               GOT  RETURN
+# do_it(5) -> 5 % 2 + do_it(4)  [2]   [3]
+# do_it(4) -> 4 % 2 + do_it(3)  [2]   [2]
+# do_it(3) -> 3 % 2 + do_it(2)  [1]   [2]
+# do_it(2) -> 2 % 2 + do_it(1)  [1]   [1]
+# do_it(1) -> 1 % 2 + do_it(0)  [0]   [1]
+# do_it(0) -> return 0          []    [0]
+# .: The output is 3.
+
 print(do_it(5))
 
 
