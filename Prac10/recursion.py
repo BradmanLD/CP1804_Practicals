@@ -26,8 +26,10 @@ def do_something(n):
         print(n ** 2)
     do_something(n - 1)
 
-# TODO: 3. write down what you think the output of this will be,
-# TODO: 4. use the debugger to step through and see what's actually happening
-# do_something(4)
+# do_something(4) -> do_something(3) -> do_something(2) -> do_something(1) -> do_something(0) -V
+# do_something(-1) -> -1 ** 2 = 1
+# Wait it doesn't end, it will recurse until it hits the recursion limit.
+# .: The output is like a thousand different numbers.
+do_something(4)
 
 # TODO: 5. fix the do_something() function so that it works the way it is probably supposed to :)
