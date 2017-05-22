@@ -61,13 +61,13 @@ def format_phrase(phrase):
     # and one more you decide (that's valid!)
     # then write the body of the function so that the tests pass
     """
-            >>> format_phrase("hello")
-            'Hello.'
-            >>> format_phrase("It is an ex parrot.")
-            'It is an ex parrot.'
-            >>> format_phrase("it did the thing.")
-            'It did the thing.'
-            """
+    >>> format_phrase("hello")
+    'Hello.'
+    >>> format_phrase("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_phrase("it did the thing.")
+    'It did the thing.'
+    """
     formatted_phrase = phrase[0].upper()
     phrase = phrase[1:]
     for i, letter in enumerate(phrase):
