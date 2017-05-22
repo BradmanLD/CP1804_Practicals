@@ -1,18 +1,18 @@
 
 
-def print_pyramid_loop(rows):
+def calculate_number_of_blocks_loop(number_of_rows):
     total = 0
-    for row in range(rows + 1):
+    for row in range(number_of_rows + 1):
         total += row
-    print(total)
+    return total
 
-# print_pyramid_loop(6)
+# print(calculate_number_of_blocks_loop(6))
 
 
-def required_number_of_blocks(row_number):
+def calculate_number_of_blocks_recursive(row_number):
     if row_number == 0:
         return 0
-    return row_number + required_number_of_blocks(row_number - 1)
+    return row_number + calculate_number_of_blocks_recursive(row_number - 1)
 
 
-print(required_number_of_blocks(3))
+print(calculate_number_of_blocks_recursive(3))
