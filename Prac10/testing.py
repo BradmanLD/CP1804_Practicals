@@ -13,6 +13,7 @@ def repeat_string(s, n):
     # """
     return " ".join([s] * n)
 
+
 def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
@@ -42,29 +43,30 @@ def run_tests():
 
     test_car = Car(fuel=20)
     assert test_car.fuel == 20
+
+    test_car.drive(15)
+    assert test_car.odometer == 15
     # Note that Car's __init__ function sets the fuel in one of two ways: using the value passed in or the default
     # You should test both of these
 
 
-# run_tests()
+run_tests()
 
-# doctest.testmod()
-
-# Important: start with a function header and just use pass as the body
-# then add doctests so that:
-# 'hello' -> ''Hello.'
-# 'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more you decide (that's valid!)
-# then write the body of the function so that the tests pass
 def format_phrase(phrase):
+    # Important: start with a function header and just use pass as the body
+    # then add doctests so that:
+    # 'hello' -> ''Hello.'
+    # 'It is an ex parrot.' -> 'It is an ex parrot.'
+    # and one more you decide (that's valid!)
+    # then write the body of the function so that the tests pass
     """
-        >>> format_phrase("hello")
-        'Hello.'
-        >>> format_phrase("It is an ex parrot.")
-        'It is an ex parrot.'
-        >>> format_phrase("it did the thing.")
-        'It did the thing.'
-        """
+            >>> format_phrase("hello")
+            'Hello.'
+            >>> format_phrase("It is an ex parrot.")
+            'It is an ex parrot.'
+            >>> format_phrase("it did the thing.")
+            'It did the thing.'
+            """
     formatted_phrase = phrase[0].upper()
     phrase = phrase[1:]
     for i, letter in enumerate(phrase):
@@ -74,4 +76,4 @@ def format_phrase(phrase):
             formatted_phrase += letter
     return formatted_phrase
 
-doctest.testmod()
+# doctest.testmod()
