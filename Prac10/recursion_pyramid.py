@@ -6,13 +6,13 @@ def print_pyramid_loop(rows):
         total += row
     print(total)
 
-print_pyramid_loop(2)
+# print_pyramid_loop(6)
 
 
-def print_pyramid_recursive(row):
-    if row > 0:
-        print_pyramid_recursive(row-1)
-        print(row + (row - 1) + (row -2) + (row - 3) + 2 + 1)   # Do it second so the pyramid starts with largest num.
+def required_number_of_blocks(row_number):
+    if row_number == 0:
+        return 0
+    return row_number + required_number_of_blocks(row_number - 1)
 
 
-# print_pyramid_recursive(6)
+print(required_number_of_blocks(3))
