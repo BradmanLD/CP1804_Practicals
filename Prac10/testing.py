@@ -52,6 +52,7 @@ def run_tests():
 
 run_tests()
 
+
 def format_phrase(phrase):
     # Important: start with a function header and just use pass as the body
     # then add doctests so that:
